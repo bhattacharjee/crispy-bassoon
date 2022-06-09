@@ -1,4 +1,8 @@
-fn foo() -> i32 { 5 }
+fn foo() -> i32 
+{ 
+    5 
+}
+
 fn bar() -> () { () }
 fn baz() -> () { 5; }
 
@@ -52,6 +56,50 @@ fn main() {
     v1.push(5);
     v1[2] = 55;
     println!("{}", v1[2]);
+
+
+    // references
+    let _x = 12;
+    let ref_x = &_x;
+    println!("ref = {}, {}", ref_x, *ref_x);
+
+    // if conditions, every arm must return
+    // elements of the same type or ()
+    let zz = if x > 0
+    {
+        10
+    }
+    else
+    {
+        55
+    };
+    println!("zz = {}", zz);
+
+    // while loop works just like a regular loop
+
+    // the "loop" works as an infinite loop
+    let mut x = 0;
+    loop
+    {
+        x += 1;
+        println!("{}, ", x);
+        if x >= 5
+        {
+            break;
+        }
+    }
+
+    // for loop works differently
+    for x in 1..10
+    {
+        println!("{}", x);
+    }
+
+    let xs = vec![1, 2, 3, 4, 5];
+    for x in xs
+    {
+        println!("{}", x);
+    }
 
 
     let x = -5;
